@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shopping List App</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous">
+</head>
+<body>
+    <div class="container" id="app">
+        <div class="bg-light p-5 m-5">
+            <h1>Shopping List</h1>
+            <input class="mt-4" type="text" name="item" id="item" placeholder="Add new item" 
+            v-model=newItem @keyUp.enter="addItem(newItem)">
+            <button class="btn btn-primary ml-5" @click="addItem(newItem)">Add Item</button>
+            <div class="mt-4"> 
+                <p  v-if="items.length === 0">No items found</p>
+                <ul class="p-0 m-0 mt-2" v-for="item in items">
+                <li>
+                    <a :href=item target="_blank">{{item}}</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+       
+    </div>
+
+    <script>
+        new Vue({
+            el : "#app",
+            data : {
+                items : [],
+                newItem : ''
+            },
+            methods: {
+                addItem(newItem) {
+                    this.items.push(newItem);
+                    this.newItem = ''
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>
