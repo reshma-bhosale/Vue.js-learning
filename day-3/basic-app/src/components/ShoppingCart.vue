@@ -1,15 +1,8 @@
 <template>
-<div>Reshma</div>
-  <!-- <div class="bg-light p-5 m-5">
+  <div class="bg-light p-5 m-5">
     <h1>Shopping List</h1>
-    <input
-      class="mt-4"
-      type="text"
-      name="item"
-      id="item"
-      placeholder="Add new item"
-      v-model="newItem"
-      @keyUp.enter="addItem(newItem)"
+    <input class="mt-4" type="text" name="item" id="item" placeholder="Add new item"
+      v-model="newItem" @keyUp.enter="addItem(newItem)" 
     />
     <button class="btn btn-primary ml-5" @click="addItem(newItem)">
       Add Item
@@ -21,16 +14,13 @@
           <a :href="item" target="_blank">{{ item }}</a>
         </li>
       </ul>
-    </div> 
-  </div>-->
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
   name: "ShoppingCart",
-  // props: {
-  //   msg: String
-  // }
   data() {
     return {
       items: [],
