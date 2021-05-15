@@ -20,8 +20,8 @@ export default {
     return {
       posts: [],
       addNewPost: {
-        id: 57,
-        title: "New Post 57",
+        id: 92,
+        title: "New Post 97",
         author: "Reshma Bhosale",
       },
     };
