@@ -1,17 +1,21 @@
 <template>
     <div class="container">
         <button class="btn btn-primary" @click="setStatus(0); ">
-            Get user details
+            User details
         </button>
         <button class="btn btn-primary ml-5" @click="setStatus(1)">
             Add New User
         </button>
         <button class="btn btn-primary ml-5" @click="setStatus(2)">
+           Update User detail
+        </button>
+        <button class="btn btn-primary ml-5" @click="setStatus(3)">
            Delete User
         </button>
         <GetUsers v-if="isSelected === 0"></GetUsers>
         <AddUser v-if="isSelected === 1"></AddUser>
-        <DeleteUser v-if="isSelected === 2"></DeleteUser>
+        <UpdateUser v-if="isSelected === 2"></UpdateUser>
+        <DeleteUser v-if="isSelected === 3"></DeleteUser>
     </div>
 </template>
 
@@ -19,13 +23,15 @@
 <script>
 import GetUsers from "./get-users.vue"
 import AddUser from "./add-user.vue"
+import UpdateUser from "./update-user.vue"
 import DeleteUser from "./delete-user"
 export default {
     name: "HandleData",
     components : {
         AddUser,
         DeleteUser,
-        GetUsers
+        GetUsers,
+        UpdateUser
     },
     data() {
         return {

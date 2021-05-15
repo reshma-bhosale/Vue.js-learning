@@ -31,7 +31,7 @@ export default {
     },
     methods: {
         addUser() {
-            this.addNewUser.id=6
+            this.addNewUser.id = 10
             this.axios.post('http://localhost:3000/users', this.addNewUser)
             .then((res)=> {
                 console.log(res)

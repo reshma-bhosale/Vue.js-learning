@@ -1,3 +1,18 @@
 {
-  "users": []
+  "users": [
+    {
+      "name": "rupali",
+      "mobile": "4234234235",
+      "email": "rupa@gmail.com",
+      "password": "sample",
+      "id": 1
+    },
+    {
+      "name": "sample",
+      "mobile": "24354645756",
+      "email": "reshmabhosale6581@gmail.com",
+      "password": "sam",
+      "id": 8
+    }
+  ]
 }

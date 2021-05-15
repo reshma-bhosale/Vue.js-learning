@@ -1,6 +1,5 @@
 <template>
     <div class="container mt-5">
-        <p>Enter ID to delete user </p>
         <input type="text" name="delete-user" id="delete-user" placeholder="Enter ID" v-model="id"/>
         <button class="btn btn-danger ml-5" @click="deleteUser">Delete</button>
     </div>
@@ -20,11 +19,13 @@ export default {
             .then((res) => {
                 let msg = 'User ' + this.id + ' deleted successfully'
                 this.$notify.success(msg)
+                this.id = ''
                 console.log(res)
             })
             .catch((err) => {
                 console.log(err)
                 this.$notify.danger(err)
+                this.id = ''
             })
         }
     },

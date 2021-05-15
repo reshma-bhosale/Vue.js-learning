@@ -13,7 +13,7 @@ import App from './App.vue'
 Vue.config.productionTip = false
 Vue.use(VueAxios, axios)
 Vue.use(VueEasytable)
-Vue.use(Notify)
+Vue.use(Notify, {visbility:5000, position: 'top-right'})
 
 
 
