@@ -1,9 +1,9 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "updated title",
-      "auther": "updated author"
+      "title": "updated new  title",
+      "author": "updated new author",
+      "id": 1
     },
     {
       "id": 2,
@@ -58,6 +58,16 @@
     {
       "id": 40,
       "title": "New Post 40",
+      "author": "Reshma Bhosale"
+    },
+    {
+      "id": 75,
+      "title": "New Post 75",
+      "author": "Reshma Bhosale"
+    },
+    {
+      "id": 57,
+      "title": "New Post 57",
       "author": "Reshma Bhosale"
     }
   ],

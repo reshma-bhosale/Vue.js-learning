@@ -3,9 +3,9 @@
     <h1>All Posts</h1>
     <ul v-for="post in posts" :key="post.id">
       <li>
-        <p>{{ post.id }}</p>
-        <p>{{ post.title }}</p>
-        <p>{{ post.author }}</p>
+        <p>Id: {{ post.id }}</p>
+        <p>Title: {{ post.title }}</p>
+        <p>Author: {{ post.author }}</p>
       </li>
     </ul>
   </div>
@@ -16,22 +16,19 @@ import axios from "axios";
 
 export default {
   name: "HelloWorld",
-  props: {
-    msg: String,
-  },
   data() {
     return {
       posts: [],
       addNewPost: {
-        id: 40,
-        title: "New Post 40",
+        id: 57,
+        title: "New Post 57",
         author: "Reshma Bhosale",
       },
     };
   },
   mounted() {
     this.addPost()
-    this.updatePosts()
+    this.updatePost()
     this.getAllPosts()
  
   },
@@ -58,11 +55,11 @@ export default {
         });
     },
     //update existing post's data
-    updatePosts() {
+    updatePost() {
       axios
-        .put("/postApis/posts/10", {
-          title: "updated title",
-          author: "updated author",
+        .put("/postApis/posts/1", {
+          title: "updated new  title",
+          author: "updated new author",
         })
         .then((res) => {
           console.log(res);
