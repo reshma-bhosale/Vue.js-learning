@@ -1,15 +1,19 @@
 <template>
     <div class="container">
-        <button class="btn btn-primary" @click="setStatus(0); ">
+        <button class="btn btn-primary" :class="{active : isSelected === 0 }"
+        @click="setStatus(0)">
             User details
         </button>
-        <button class="btn btn-primary ml-5" @click="setStatus(1)">
+        <button class="btn btn-primary ml-5" :class="{active : isSelected === 1 }"
+        @click="setStatus(1)">
             Add New User
         </button>
-        <button class="btn btn-primary ml-5" @click="setStatus(2)">
+        <button class="btn btn-primary ml-5" :class="{active : isSelected === 2 }"
+        @click="setStatus(2)">
            Update User detail
         </button>
-        <button class="btn btn-primary ml-5" @click="setStatus(3)">
+        <button class="btn btn-primary ml-5" :class="{active : isSelected === 3 }" 
+        @click="setStatus(3)">
            Delete User
         </button>
         <GetUsers v-if="isSelected === 0"></GetUsers>
@@ -45,3 +49,10 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.btn-primary:not(:disabled):not(.disabled).active{
+    background-color:  #cc00ff;
+    border : 1px solid #8f00b3;
+}
+</style>

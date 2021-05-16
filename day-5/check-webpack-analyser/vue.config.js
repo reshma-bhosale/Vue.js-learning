@@ -1,25 +1,25 @@
-module.exports ={
-    devServer : {
-        proxy : {
-                "/getApis" : {
-                    target : "http://localhost:3000",
-                    changeOrigin : true,
-                    pathRewrite : {
-                        "^/getAPis" : ""
-                    }
-                },
-                "/postApis" : {
-                    target : "http://localhost:3000",
-                    changeOrigin : true,
-                    pathRewrite : {
-                        "^postApis" : ""
-                    }
+module.exports = {
+    devServer: {
+        proxy: {
+            "/getApis": {
+                target: "http://localhost:3000",
+                changeOrigin: true,
+                pathRewrite: {
+                    "^/getApis": ""
                 }
+            },
+            "/postApis": {
+                target: "http://localhost:3000",
+                changeOrigin: true,
+                pathRewrite: {
+                    "^postApis": ""
+                }
+            }
         }
     },
     pluginOptions: {
         webpackBundleAnalyzer: {
-          openAnalyzer: true
+            openAnalyzer: true
         }
     }
 }

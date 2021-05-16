@@ -2,7 +2,7 @@
     <div class="container mt-5">
         <p>Enter ID to get user details </p>
         <input type="text" name="delete-user" id="delete-user" placeholder="Enter ID" v-model="id"/>
-        <button class="btn btn-secondary ml-5" @click="getUserDetail">Search</button>
+        <button class="btn btn-primary ml-5" @click="getUserDetail">Search</button>
         <div class="row mt-5" v-if="user.length !== 0">
             <div class="col-md-6" >
                 <p>Name: {{user.name}}</p>
@@ -61,12 +61,16 @@ export default {
                 this.user = res.data
                 let msg = 'User ' + this.id + ' updated successfully'
                 this.$notify.success(msg)
+                this.email = ''
+                this.password = ''
                 console.log(this.user)
             })
             .catch((err) =>{
                 console.log(err)
                 this.$notify.danger(err)
                 this.user = ''
+                this.email = ''
+                this.password = ''
             })
         }
     }
