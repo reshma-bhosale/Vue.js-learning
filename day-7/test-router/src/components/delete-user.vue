@@ -16,14 +16,12 @@ export default {
     methods: {
         deleteUser() {
             this.axios.delete('http://localhost:3000/users/' + this.id)
-            .then(() => {
-                let msg = 'User ' + this.id + ' deleted successfully'
-                this.$notify.success(msg)
+            .then((res) => {
                 this.id = ''
+                console.log(res)
             })
             .catch((err) => {
                 console.log(err)
-                this.$notify.danger(err)
                 this.id = ''
             })
         }

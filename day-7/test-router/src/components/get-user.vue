@@ -1,13 +1,27 @@
 <template>
   <div class="container mt-4"><b>Users : </b>
     <div class="mt-3">    
-        <ve-table :columns="columns" :table-data="users" />
+        <table border="1px solid">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+            <tr v-for="user in users" :key="user">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.mobile}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.password}}</td>
+            </tr>
+        </table>
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: "GetUsers",
   data() {
@@ -23,10 +37,10 @@ export default {
     };
   },
   created () {
-      this.getUserData()
+      this.getData()
   },
   methods: {
-    getUserData() {
+    getData() {
       this.axios
         .get("http://localhost:3000/users")
         .then((res) => {
@@ -34,9 +48,7 @@ export default {
         })
         .catch((err) => {
           console.log(err)
-          this.$notify.danger(err)
         });
-
     },
   },
 };

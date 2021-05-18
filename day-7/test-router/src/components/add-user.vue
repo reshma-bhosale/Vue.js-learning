@@ -33,13 +33,11 @@ export default {
         addUser() {
             this.addNewUser.id = Math.floor(Math.random()*500)
             this.axios.post('http://localhost:3000/users', this.addNewUser)
-            .then(()=> {
-                this.$notify.success('User added successfully')
-
+            .then((res)=> {
+                console.log(res)
             })
             .catch((err)=> {
                 console.log(err)
-                this.$notify.danger(err)
             })
             this.addNewUser.id = ''
             this.addNewUser.name = ''
@@ -52,7 +50,6 @@ export default {
 </script>
 
 <style scoped>
-
 .input { 
     left : 30%
 }

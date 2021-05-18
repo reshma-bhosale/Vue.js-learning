@@ -17,6 +17,7 @@
                 placeholder="Enter Password" v-model="password" >
                 <button class="btn btn-primary ml-5 mt-4" @click="changeDetails">Change details</button>
             </div>
+
         </div>
     </div>
 </template>
@@ -40,8 +41,10 @@ export default {
             this.axios.get('http://localhost:3000/users/' + this.id)
             .then((res) => {
                 this.user = res.data
+                console.log(this.user)
             })
             .catch((err) =>{
+                console.log(err)
                 this.$notify.danger(err)
                 this.user = ''
                 this.id = ''
@@ -56,13 +59,12 @@ export default {
             })
             .then((res) => {
                 this.user = res.data
-                let msg = 'User ' + this.id + ' updated successfully'
-                this.$notify.success(msg)
                 this.email = ''
                 this.password = ''
+                console.log(this.user)
             })
             .catch((err) =>{
-                this.$notify.danger(err)
+                console.log(err)
                 this.user = ''
                 this.email = ''
                 this.password = ''
